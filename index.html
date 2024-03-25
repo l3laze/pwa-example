@@ -6,7 +6,8 @@
   <title>PWA Example</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="canonical" href="https://l3laze.github.io/pwa-example/" />
+  <link rel="manifest" href="/pwa-example/manifest.webmanifest">
 </head>
 <body>
   <div>
@@ -17,7 +18,7 @@
     (async () => {
       if ('serviceWorker' in navigator) {
         try {
-          await navigator.serviceWorker.register('worker.js')
+          await navigator.serviceWorker.register('/pwa-example/worker.js')
         } catch (err) {
           alert(err.message)
         }
