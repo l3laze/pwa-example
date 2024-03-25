@@ -1,0 +1,14 @@
+{
+  "name": "PWA Example",
+  "short_name": "PWAE",
+  "start_url": "/index.html",
+  "scope": "/index.html",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icons8-merge-git-64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    }
+  ]
+}
