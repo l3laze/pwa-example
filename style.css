@@ -7,3 +7,10 @@
 body {
   margin: 0.2rem;
 }
+
+textarea {
+  width: 99%;
+  margin-top: 1rem;
+  margin-left: 0.5%;
+  padding: 0.15rem 0.25rem;
+}

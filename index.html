@@ -5,25 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWA Example</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="canonical" href="https://l3laze.github.io/pwa-example/" />
+  <link rel="canonical" href="https://l3laze.github.io/pwa-example/">
   <link rel="manifest" href="/pwa-example/manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div>
-    <a href="https://icons8.com">Icons by Icons8</a>
+    <h1>PWA Editor</h1>
+    <button type="button" id="openFile">Open File</button>
+    <button type="button" id="saveFile">Save File</button>
+    <button type="button" id="openFolder">Open Folder</button>
+    <button type="button" id="readFolder">Read Folder</button>
+    <button type="button" id="swapData">Swap Data</button>
+    <textarea id="editorArea" rows="20"></textarea>
+
+    <a href="https://icons8.com"><h2>Icons by Icons8</h2></a>
   </div>
-  <script src="script.js"></script>
   <script>
-    (async () => {
-      if ('serviceWorker' in navigator) {
-        try {
-          await navigator.serviceWorker.register('/pwa-example/worker.js')
-        } catch (err) {
-          alert(err.message)
-        }
+    if (navigator.serviceWorker) {
+      try {
+        navigator.serviceWorker.register(
+          '/pwa-example/worker.js',
+          { scope: '/pwa-example/' })
+      } catch (err) {
+        console.error(err.message)
       }
-    })()
+    }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
